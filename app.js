@@ -727,11 +727,16 @@ $(document).ready(function () {
 
     $('#example tbody').on('click', 'button', function () {
         var data = table.row($(this).parents('tr')).data();
-        payload.data.push(data);
-        table.clear();
-        table.rows.add(payload.data);
-        table.draw();
-        alert('User is saved succesfully.');
+        $('#form').modal('show'); 
+        $('#firstName').val(data.first_name);
+        $('#lastName').val(data.last_name);
+        $('#position').val(data.position);
+        $('#office').val(data.office);
+        $('#salary').val(data.salary);
+      //  payload.data.push(data);
+      //  table.clear();
+       // table.rows.add(payload.data);
+       // table.draw();
     });
 
     $('#example tbody').on('click', 'a', function () {
